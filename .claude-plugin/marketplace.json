@@ -1,0 +1,91 @@
+{
+	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+	"name": "topy-ai-coo",
+	"owner": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai"
+	},
+	"metadata": {
+		"description": "AI COO skills for founders, built for TOPY.AI: the operations centre that keeps every AI cofounder's Routines running on time, never lets a failure go unnoticed, keeps approvals from piling up and reports to the Founder and the CEO. Core skills run on the TOPY COO MCP server (https://topy.ai/mcp/coo); standalone skills are operations methods that work anywhere.",
+		"version": "0.1.0"
+	},
+	"plugins": [
+		{
+			"name": "topy-ai-coo",
+			"source": "./plugins/topy-ai-coo",
+			"description": "TOPY AI COO core: connects the TOPY COO MCP server and runs operations day to day — Connect the AI COO, Daily operations check, The COO's goals.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"operations",
+				"core"
+			]
+		},
+		{
+			"name": "topy-ai-coo-routines",
+			"source": "./plugins/topy-ai-coo-routines",
+			"description": "TOPY AI COO Routines & schedules skills (3): Run a Routine now, Schedule check, Schedule a new Routine. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"operations",
+				"routines"
+			]
+		},
+		{
+			"name": "topy-ai-coo-incidents",
+			"source": "./plugins/topy-ai-coo-incidents",
+			"description": "TOPY AI COO Incidents & retries skills (2): Failed runs and safe retries, Scheduler down. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"operations",
+				"incidents"
+			]
+		},
+		{
+			"name": "topy-ai-coo-approvals",
+			"source": "./plugins/topy-ai-coo-approvals",
+			"description": "TOPY AI COO Approvals skills (2): Approval reminders, Approvals waiting. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"operations",
+				"approvals"
+			]
+		},
+		{
+			"name": "topy-ai-coo-reporting",
+			"source": "./plugins/topy-ai-coo-reporting",
+			"description": "TOPY AI COO Reporting & improvement skills (4): Automation sweep, Efficiency review, Tool and vendor evaluation, Weekly operations report. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"operations",
+				"reporting"
+			]
+		},
+		{
+			"name": "topy-ai-coo-all",
+			"source": "./plugins/topy-ai-coo-all",
+			"description": "All 14 TOPY AI COO skills in one install: AI COO core (MCP), Routines & schedules, Incidents & retries, Approvals, Reporting & improvement.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": [
+				"topy.ai",
+				"ai-coo",
+				"bundle"
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-coo-approvals",
+	"version": "0.1.0",
+	"description": "TOPY AI COO Approvals skills (2): Approval reminders, Approvals waiting. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-coo",
+		"operations",
+		"approvals"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

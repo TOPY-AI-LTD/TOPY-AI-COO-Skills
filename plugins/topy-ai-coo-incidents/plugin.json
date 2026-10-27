@@ -1,0 +1,37 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "topy-ai-coo-incidents",
+	"version": "0.1.0",
+	"description": "TOPY AI COO Incidents & retries skills (2): Failed runs and safe retries, Scheduler down. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-coo",
+		"operations",
+		"incidents"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "TOPY.AI COO Incidents & retries",
+				"shortDescription": "TOPY AI COO Incidents & retries skills (2): Failed runs and safe retries, Scheduler down. Add the topy-ai-coo plugin too",
+				"longDescription": "TOPY AI COO Incidents & retries skills (2): Failed runs and safe retries, Scheduler down. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+				"capabilities": [
+					"Read"
+				],
+				"category": "Productivity",
+				"brandColor": "#FF1212",
+				"privacyPolicyURL": "https://topy.ai/privacy",
+				"websiteURL": "https://topy.ai",
+				"developerName": "TOPY AI LTD"
+			}
+		}
+	}
+}

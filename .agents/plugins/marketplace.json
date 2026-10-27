@@ -1,0 +1,68 @@
+{
+	"name": "topy-ai-coo",
+	"interface": {
+		"displayName": "TOPY.AI AI COO skills"
+	},
+	"plugins": [
+		{
+			"name": "topy-ai-coo",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-coo"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-coo-routines",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-coo-routines"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-coo-incidents",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-coo-incidents"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-coo-approvals",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-coo-approvals"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "topy-ai-coo-reporting",
+			"source": {
+				"source": "local",
+				"path": "./plugins/topy-ai-coo-reporting"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "NONE"
+			},
+			"category": "Productivity"
+		}
+	]
+}

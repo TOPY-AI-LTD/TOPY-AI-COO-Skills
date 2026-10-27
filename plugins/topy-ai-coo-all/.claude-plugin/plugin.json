@@ -1,0 +1,26 @@
+{
+	"name": "topy-ai-coo-all",
+	"version": "0.1.0",
+	"description": "All 14 TOPY AI COO skills in one install: AI COO core (MCP), Routines & schedules, Incidents & retries, Approvals, Reporting & improvement.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-coo",
+		"bundle"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy",
+	"dependencies": [
+		"topy-ai-coo",
+		"topy-ai-coo-routines",
+		"topy-ai-coo-incidents",
+		"topy-ai-coo-approvals",
+		"topy-ai-coo-reporting"
+	]
+}

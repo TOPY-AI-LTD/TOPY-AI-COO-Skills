@@ -1,0 +1,321 @@
+{
+	"name": "TOPY.AI AI COO skills",
+	"description": "AI COO skills for founders, built for TOPY.AI: the operations centre that keeps every AI cofounder's Routines running on time, never lets a failure go unnoticed, keeps approvals from piling up and reports to the Founder and the CEO. Core skills run on the TOPY COO MCP server (https://topy.ai/mcp/coo); standalone skills are operations methods that work anywhere.",
+	"version": "0.1.0",
+	"updated": "2026-10-27",
+	"publisher": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"install": {
+		"claude_code": "/plugin marketplace add TOPY-AI-LTD/TOPY-AI-COO-Skills",
+		"npm": "npx @topy-ai/coo-skills install",
+		"mcp_server": "https://topy.ai/mcp/coo"
+	},
+	"tiers": {
+		"core": "Runs on the TOPY MCP server; needs a TOPY account.",
+		"connected": "Uses TOPY data and actions when the MCP server is connected; works on its own otherwise.",
+		"standalone": "An operations method that works with any agent; can use TOPY where it fits."
+	},
+	"categories": [
+		{
+			"id": "core",
+			"name": "AI COO core (MCP)",
+			"plugin": "topy-ai-coo",
+			"count": 3
+		},
+		{
+			"id": "routines",
+			"name": "Routines & schedules",
+			"plugin": "topy-ai-coo-routines",
+			"count": 3
+		},
+		{
+			"id": "incidents",
+			"name": "Incidents & retries",
+			"plugin": "topy-ai-coo-incidents",
+			"count": 2
+		},
+		{
+			"id": "approvals",
+			"name": "Approvals",
+			"plugin": "topy-ai-coo-approvals",
+			"count": 2
+		},
+		{
+			"id": "reporting",
+			"name": "Reporting & improvement",
+			"plugin": "topy-ai-coo-reporting",
+			"count": 4
+		}
+	],
+	"skills": [
+		{
+			"id": "topy-coo-connect",
+			"name": "Connect the AI COO",
+			"category": "core",
+			"category_name": "AI COO core (MCP)",
+			"plugin": "topy-ai-coo",
+			"tier": "core",
+			"summary": "Connects the founder's AI COO — the TOPY COO MCP server on the same TOPY account as the AI CEO and CFO — and checks that OneMan's Routine scheduler, approval links and Founder email are set up.",
+			"mcp_tools": [
+				"account_get",
+				"coo_health",
+				"coo_routines",
+				"dashboard_link"
+			],
+			"pairs_with": [
+				"topy-coo-daily-check",
+				"topy-coo-goals"
+			],
+			"path": "plugins/topy-ai-coo/skills/topy-coo-connect/SKILL.md"
+		},
+		{
+			"id": "topy-coo-daily-check",
+			"name": "Daily operations check",
+			"category": "core",
+			"category_name": "AI COO core (MCP)",
+			"plugin": "topy-ai-coo",
+			"tier": "core",
+			"summary": "The founder's morning operations check: is the scheduler alive, what failed overnight (safe ones retried once), what waits on the founder — quiet when all is well.",
+			"mcp_tools": [
+				"coo_health",
+				"coo_runs",
+				"coo_waiting",
+				"coo_retry_failed",
+				"coo_report_send"
+			],
+			"pairs_with": [
+				"topy-coo-failed-runs",
+				"topy-coo-waiting-approvals",
+				"topy-coo-scheduler-down"
+			],
+			"path": "plugins/topy-ai-coo/skills/topy-coo-daily-check/SKILL.md"
+		},
+		{
+			"id": "topy-coo-goals",
+			"name": "The COO's goals",
+			"category": "core",
+			"category_name": "AI COO core (MCP)",
+			"plugin": "topy-ai-coo",
+			"tier": "core",
+			"summary": "The AI COO's four standing goals — Routines run on time, no silent failure, approvals flowing, less founder time per outcome — measured from the scheduler's records, with the status the COO reports to the CEO.",
+			"mcp_tools": [
+				"coo_health",
+				"coo_efficiency",
+				"coo_waiting",
+				"coo_status_report"
+			],
+			"pairs_with": [
+				"topy-coo-daily-check",
+				"topy-coo-weekly-report"
+			],
+			"path": "plugins/topy-ai-coo/skills/topy-coo-goals/SKILL.md"
+		},
+		{
+			"id": "topy-coo-run-routine",
+			"name": "Run a Routine now",
+			"category": "routines",
+			"category_name": "Routines & schedules",
+			"plugin": "topy-ai-coo-routines",
+			"tier": "connected",
+			"summary": "Runs one Routine now through the scheduler (the same policy gate and approvals as a scheduled run) and reads back where it stopped — for a first try, or to catch up after a fix.",
+			"mcp_tools": [
+				"coo_routines",
+				"coo_routine_run",
+				"coo_runs"
+			],
+			"pairs_with": [
+				"topy-coo-failed-runs",
+				"topy-coo-waiting-approvals"
+			],
+			"path": "plugins/topy-ai-coo-routines/skills/topy-coo-run-routine/SKILL.md"
+		},
+		{
+			"id": "topy-coo-schedule-check",
+			"name": "Schedule check",
+			"category": "routines",
+			"category_name": "Routines & schedules",
+			"plugin": "topy-ai-coo-routines",
+			"tier": "connected",
+			"summary": "Checks every cofounder's scheduled Routines against the scheduling rules — runs a day, on-the-hour starts, clashes, the daily cap, missing inputs and Routines that never report — and proposes fixes.",
+			"mcp_tools": [
+				"coo_schedule_check",
+				"coo_routines"
+			],
+			"pairs_with": [
+				"topy-coo-schedule-routine",
+				"topy-coo-weekly-report"
+			],
+			"path": "plugins/topy-ai-coo-routines/skills/topy-coo-schedule-check/SKILL.md"
+		},
+		{
+			"id": "topy-coo-schedule-routine",
+			"name": "Schedule a new Routine",
+			"category": "routines",
+			"category_name": "Routines & schedules",
+			"plugin": "topy-ai-coo-routines",
+			"tier": "connected",
+			"summary": "Picks a good schedule for a new Routine — daily or weekly, off the hour, clear of the other Routines, within the daily cap — and checks it before it goes on the scheduler.",
+			"mcp_tools": [
+				"coo_schedule_plan",
+				"coo_schedule_check",
+				"coo_routines"
+			],
+			"pairs_with": [
+				"topy-coo-schedule-check",
+				"topy-coo-run-routine"
+			],
+			"path": "plugins/topy-ai-coo-routines/skills/topy-coo-schedule-routine/SKILL.md"
+		},
+		{
+			"id": "topy-coo-failed-runs",
+			"name": "Failed runs and safe retries",
+			"category": "incidents",
+			"category_name": "Incidents & retries",
+			"plugin": "topy-ai-coo-incidents",
+			"tier": "connected",
+			"summary": "Looks at failed Routine runs, reruns once the ones that are safe (failed on a read, nothing sent or written outside, not a permission or token error) and hands the rest to a person with the reason.",
+			"mcp_tools": [
+				"coo_runs",
+				"coo_retry_failed",
+				"coo_routine_run"
+			],
+			"pairs_with": [
+				"topy-coo-daily-check",
+				"topy-coo-scheduler-down"
+			],
+			"path": "plugins/topy-ai-coo-incidents/skills/topy-coo-failed-runs/SKILL.md"
+		},
+		{
+			"id": "topy-coo-scheduler-down",
+			"name": "Scheduler down",
+			"category": "incidents",
+			"category_name": "Incidents & retries",
+			"plugin": "topy-ai-coo-incidents",
+			"tier": "connected",
+			"summary": "When the Routine scheduler stops ticking (the routine-watchdog email, or the COO's health check says down): confirm it, say what is not running, and walk whoever has server access through the checks — without guessing a fix.",
+			"mcp_tools": [
+				"coo_health",
+				"coo_routines",
+				"coo_runs"
+			],
+			"pairs_with": [
+				"topy-coo-failed-runs",
+				"topy-coo-daily-check"
+			],
+			"path": "plugins/topy-ai-coo-incidents/skills/topy-coo-scheduler-down/SKILL.md"
+		},
+		{
+			"id": "topy-coo-approval-reminders",
+			"name": "Approval reminders",
+			"category": "approvals",
+			"category_name": "Approvals",
+			"plugin": "topy-ai-coo-approvals",
+			"tier": "connected",
+			"summary": "Sends the founder a fresh one-click approval email for runs waiting longer than a threshold (default 24 hours) — once a day per run, never more.",
+			"mcp_tools": [
+				"coo_waiting",
+				"coo_remind"
+			],
+			"pairs_with": [
+				"topy-coo-waiting-approvals"
+			],
+			"path": "plugins/topy-ai-coo-approvals/skills/topy-coo-approval-reminders/SKILL.md"
+		},
+		{
+			"id": "topy-coo-waiting-approvals",
+			"name": "Approvals waiting",
+			"category": "approvals",
+			"category_name": "Approvals",
+			"plugin": "topy-ai-coo-approvals",
+			"tier": "connected",
+			"summary": "Shows every Routine paused on the founder — what it waits for, what it found so far, since when, when the link expires — so the founder can decide in one sitting.",
+			"mcp_tools": [
+				"coo_waiting",
+				"coo_runs"
+			],
+			"pairs_with": [
+				"topy-coo-approval-reminders",
+				"topy-coo-run-routine"
+			],
+			"path": "plugins/topy-ai-coo-approvals/skills/topy-coo-waiting-approvals/SKILL.md"
+		},
+		{
+			"id": "topy-coo-automation-sweep",
+			"name": "Automation sweep",
+			"category": "reporting",
+			"category_name": "Reporting & improvement",
+			"plugin": "topy-ai-coo-reporting",
+			"tier": "connected",
+			"summary": "Finds repeated manual work (done three times or more) worth turning into a Routine or a service, drafts the Routine's steps and schedule, and leaves the go-ahead to the founder.",
+			"mcp_tools": [
+				"coo_find_automation",
+				"coo_schedule_plan",
+				"coo_routines"
+			],
+			"pairs_with": [
+				"topy-coo-schedule-routine",
+				"topy-coo-efficiency"
+			],
+			"path": "plugins/topy-ai-coo-reporting/skills/topy-coo-automation-sweep/SKILL.md"
+		},
+		{
+			"id": "topy-coo-efficiency",
+			"name": "Efficiency review",
+			"category": "reporting",
+			"category_name": "Reporting & improvement",
+			"plugin": "topy-ai-coo-reporting",
+			"tier": "connected",
+			"summary": "Measures how well the Routines run — success rate, retries, cost and failures by cofounder and step — and finds the few changes that would raise reliability or cut founder time.",
+			"mcp_tools": [
+				"coo_efficiency",
+				"coo_runs",
+				"coo_waiting"
+			],
+			"pairs_with": [
+				"topy-coo-weekly-report",
+				"topy-coo-automation-sweep"
+			],
+			"path": "plugins/topy-ai-coo-reporting/skills/topy-coo-efficiency/SKILL.md"
+		},
+		{
+			"id": "topy-coo-vendor-evaluation",
+			"name": "Tool and vendor evaluation",
+			"category": "reporting",
+			"category_name": "Reporting & improvement",
+			"plugin": "topy-ai-coo-reporting",
+			"tier": "connected",
+			"summary": "Compares tools, vendors or contractors on weighted criteria and value for money, and recommends one with the reasons — a method that works with or without TOPY.",
+			"mcp_tools": [
+				"coo_evaluate"
+			],
+			"pairs_with": [
+				"topy-coo-automation-sweep"
+			],
+			"path": "plugins/topy-ai-coo-reporting/skills/topy-coo-vendor-evaluation/SKILL.md"
+		},
+		{
+			"id": "topy-coo-weekly-report",
+			"name": "Weekly operations report",
+			"category": "reporting",
+			"category_name": "Reporting & improvement",
+			"plugin": "topy-ai-coo-reporting",
+			"tier": "connected",
+			"summary": "The week's operations for the founder (branded email) and the CEO: runs by cofounder, success rate, what fails most, schedule problems and what waits on the founder.",
+			"mcp_tools": [
+				"coo_health",
+				"coo_efficiency",
+				"coo_schedule_check",
+				"coo_waiting",
+				"coo_report_send"
+			],
+			"pairs_with": [
+				"topy-coo-goals",
+				"topy-coo-schedule-check"
+			],
+			"path": "plugins/topy-ai-coo-reporting/skills/topy-coo-weekly-report/SKILL.md"
+		}
+	]
+}

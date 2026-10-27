@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"topy-coo": {
+			"type": "http",
+			"url": "https://topy.ai/mcp/coo"
+		}
+	}
+}

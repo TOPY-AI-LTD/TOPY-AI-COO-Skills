@@ -1,0 +1,20 @@
+{
+	"name": "topy-ai-coo-reporting",
+	"version": "0.1.0",
+	"description": "TOPY AI COO Reporting & improvement skills (4): Automation sweep, Efficiency review, Tool and vendor evaluation, Weekly operations report. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+	"author": {
+		"name": "TOPY AI LTD",
+		"email": "startup@topy.ai",
+		"url": "https://topy.ai"
+	},
+	"homepage": "https://topy.ai/developers",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"license": "MIT",
+	"keywords": [
+		"topy.ai",
+		"ai-coo",
+		"operations",
+		"reporting"
+	],
+	"privacyPolicyUrl": "https://topy.ai/privacy"
+}

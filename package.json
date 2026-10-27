@@ -1,0 +1,19 @@
+{
+	"name": "topy-ai-coo-skills",
+	"private": true,
+	"version": "0.1.0",
+	"description": "AI COO skills for founders, built for TOPY.AI: the operations centre that keeps every AI cofounder's Routines running on time, never lets a failure go unnoticed, keeps approvals from piling up and reports to the Founder and the CEO. Core skills run on the TOPY COO MCP server (https://topy.ai/mcp/coo); standalone skills are operations methods that work anywhere.",
+	"license": "MIT",
+	"repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"keywords": [
+		"pi-package",
+		"agent-skills",
+		"ai-coo",
+		"topy.ai"
+	],
+	"pi": {
+		"skills": [
+			"./plugins/*/skills"
+		]
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "@topy-ai/coo-skills",
+	"version": "0.1.0",
+	"description": "Install the TOPY.AI AI COO skills (daily operations check, Routine schedules, failed runs and safe retries, approvals, weekly operations reports) into Claude Code, Codex, Pi, Cursor, Gemini CLI, OpenCode, Copilot and other coding agents, for one project or for your user. Also a Pi package.",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills.git",
+		"directory": "packages/skills"
+	},
+	"bugs": "https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills/issues",
+	"keywords": [
+		"topy.ai",
+		"ai-coo",
+		"founders",
+		"operations",
+		"routines",
+		"scheduler",
+		"automation",
+		"skills",
+		"agent-skills",
+		"claude-code",
+		"codex",
+		"pi-package",
+		"pi",
+		"cursor",
+		"gemini-cli",
+		"opencode",
+		"mcp"
+	],
+	"bin": {
+		"coo-skills": "bin/coo-skills.mjs"
+	},
+	"pi": {
+		"skills": [
+			"./skills"
+		]
+	},
+	"files": [
+		"bin",
+		"skills",
+		"catalog.json",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"prepack": "node scripts/bundle.mjs",
+		"test": "node scripts/bundle.mjs && node --test scripts/cli.test.mjs"
+	}
+}
