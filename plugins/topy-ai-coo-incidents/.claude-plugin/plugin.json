@@ -1,7 +1,7 @@
 {
 	"name": "topy-ai-coo-incidents",
-	"version": "0.1.0",
-	"description": "TOPY AI COO Incidents & retries skills (2): Failed runs and safe retries, Scheduler down. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
+	"version": "0.1.1",
+	"description": "TOPY AI COO Incidents & retries skills (3): Failed runs and safe retries, Scheduler down, Server health. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
 	"author": {
 		"name": "TOPY AI LTD",
 		"email": "startup@topy.ai",

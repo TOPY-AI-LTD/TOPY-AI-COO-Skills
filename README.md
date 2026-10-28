@@ -105,7 +105,7 @@ MIT © TOPY AI LTD. Privacy: [topy.ai/privacy](https://topy.ai/privacy).
 
 <!-- skills:start -->
 
-**14 skills in 5 plugins**, plus the `topy-ai-coo-all` bundle. Generated from the source catalogue: please open an issue rather than editing a `SKILL.md`.
+**15 skills in 5 plugins**, plus the `topy-ai-coo-all` bundle. Generated from the source catalogue: please open an issue rather than editing a `SKILL.md`.
 
 ### AI COO core (MCP) · `topy-ai-coo`
 
@@ -129,6 +129,7 @@ MIT © TOPY AI LTD. Privacy: [topy.ai/privacy](https://topy.ai/privacy).
 |---|---|---|
 | [`topy-coo-failed-runs`](plugins/topy-ai-coo-incidents/skills/topy-coo-failed-runs/SKILL.md) | connected | Looks at failed Routine runs, reruns once the ones that are safe (failed on a read, nothing sent or written outside, not a permission or token error) and hands the rest to a person with the reason. |
 | [`topy-coo-scheduler-down`](plugins/topy-ai-coo-incidents/skills/topy-coo-scheduler-down/SKILL.md) | connected | When the Routine scheduler stops ticking (the routine-watchdog email, or the COO's health check says down): confirm it, say what is not running, and walk whoever has server access through the checks — without guessing a fix. |
+| [`topy-coo-server-health`](plugins/topy-ai-coo-incidents/skills/topy-coo-server-health/SKILL.md) | connected | Reads disk (every mount and its inodes), memory, swap and load on the founder's servers and the OneMan host, says what is near its limit and how soon a growing disk fills, and names who should act — without deleting or restarting anything. |
 
 ### Approvals · `topy-ai-coo-approvals`
 

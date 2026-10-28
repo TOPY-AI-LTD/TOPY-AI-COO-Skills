@@ -1,6 +1,6 @@
 {
 	"name": "topy-ai-coo-routines",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "TOPY AI COO Routines & schedules skills (3): Run a Routine now, Schedule check, Schedule a new Routine. Add the topy-ai-coo plugin too, for the core skills and the COO MCP server.",
 	"author": {
 		"name": "TOPY AI LTD",

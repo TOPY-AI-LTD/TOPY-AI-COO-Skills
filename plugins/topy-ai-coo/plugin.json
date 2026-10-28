@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "topy-ai-coo",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "TOPY AI COO core: connects the TOPY COO MCP server and runs operations day to day — Connect the AI COO, Daily operations check, The COO's goals.",
 	"author": {
 		"name": "TOPY AI LTD",

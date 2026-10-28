@@ -1,8 +1,8 @@
 {
 	"name": "TOPY.AI AI COO skills",
 	"description": "AI COO skills for founders, built for TOPY.AI: the operations centre that keeps every AI cofounder's Routines running on time, never lets a failure go unnoticed, keeps approvals from piling up and reports to the Founder and the CEO. Core skills run on the TOPY COO MCP server (https://topy.ai/mcp/coo); standalone skills are operations methods that work anywhere.",
-	"version": "0.1.0",
-	"updated": "2026-10-27",
+	"version": "0.1.1",
+	"updated": "2026-10-28",
 	"publisher": {
 		"name": "TOPY AI LTD",
 		"email": "startup@topy.ai",
@@ -35,7 +35,7 @@
 			"id": "incidents",
 			"name": "Incidents & retries",
 			"plugin": "topy-ai-coo-incidents",
-			"count": 2
+			"count": 3
 		},
 		{
 			"id": "approvals",
@@ -83,13 +83,15 @@
 				"coo_health",
 				"coo_runs",
 				"coo_waiting",
+				"coo_resources",
 				"coo_retry_failed",
 				"coo_report_send"
 			],
 			"pairs_with": [
 				"topy-coo-failed-runs",
 				"topy-coo-waiting-approvals",
-				"topy-coo-scheduler-down"
+				"topy-coo-scheduler-down",
+				"topy-coo-server-health"
 			],
 			"path": "plugins/topy-ai-coo/skills/topy-coo-daily-check/SKILL.md"
 		},
@@ -206,6 +208,24 @@
 				"topy-coo-daily-check"
 			],
 			"path": "plugins/topy-ai-coo-incidents/skills/topy-coo-scheduler-down/SKILL.md"
+		},
+		{
+			"id": "topy-coo-server-health",
+			"name": "Server health",
+			"category": "incidents",
+			"category_name": "Incidents & retries",
+			"plugin": "topy-ai-coo-incidents",
+			"tier": "connected",
+			"summary": "Reads disk (every mount and its inodes), memory, swap and load on the founder's servers and the OneMan host, says what is near its limit and how soon a growing disk fills, and names who should act — without deleting or restarting anything.",
+			"mcp_tools": [
+				"coo_resources",
+				"coo_server_jobs"
+			],
+			"pairs_with": [
+				"topy-coo-daily-check",
+				"topy-coo-scheduler-down"
+			],
+			"path": "plugins/topy-ai-coo-incidents/skills/topy-coo-server-health/SKILL.md"
 		},
 		{
 			"id": "topy-coo-approval-reminders",

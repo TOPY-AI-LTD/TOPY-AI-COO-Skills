@@ -5,7 +5,7 @@ license: MIT
 metadata:
   category: core
   tier: core
-  version: 0.1.0
+  version: 0.1.1
   docs: https://github.com/TOPY-AI-LTD/TOPY-AI-COO-Skills/blob/main/plugins/topy-ai-coo/skills/topy-coo-daily-check/SKILL.md
 ---
 # Daily operations check
@@ -25,6 +25,8 @@ A good COO looks at the operation every morning and bothers the founder only whe
    (preview first): it reruns only failures that are safe — failed on a read, nothing sent or written outside, not a
    permission or token error — once a day each. Show the preview; confirm only after the founder agrees.
 3. `coo_waiting`: approvals waiting, oldest first, with when each link expires.
+   Then `coo_resources`: an `urgent` item (a disk or memory at 90%, a disk full within 7 days, a server not read) is
+   news; for detail use `topy-coo-server-health`.
 4. Decide what is news: the scheduler down, a failure that needs a person, an approval waiting over 24 hours or whose link
    expires within a day, a setup issue. Nothing → one line: "All Routines ran; nothing needs you."
 5. Otherwise up to five lines, most important first, and one action tied to a COO goal. To email it, `coo_report_send`
@@ -51,3 +53,4 @@ Do: <one action> (goal: <on time | no silent failure | approvals flowing | found
 - `topy-coo-failed-runs` — a failure in detail.
 - `topy-coo-waiting-approvals` — approvals piling up.
 - `topy-coo-scheduler-down` — when the scheduler stopped.
+- `topy-coo-server-health` — a disk, memory or load note in detail.
